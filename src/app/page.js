@@ -66,7 +66,7 @@ export default function Home() {
   }, [data]);
 
   return loading ? (
-    <p>Loading...</p>
+    <p className="min-h-screen">Loading...</p>
   ) : (
     <main className="flex min-h-screen flex-col justify-between p-2 lg:mx-auto lg:my-0 lg:max-w-screen-md ">
       {first ? (
