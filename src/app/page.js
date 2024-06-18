@@ -68,41 +68,45 @@ export default function Home() {
   return loading ? (
     <p>Loading...</p>
   ) : (
-    <main className="flex min-h-screen flex-col justify-between p-2 ">
+    <main className="flex min-h-screen flex-col justify-between p-2 lg:mx-auto lg:my-0 lg:max-w-screen-md ">
       {first ? (
         <article className="flex flex-col justify-start ">
           <span className="bg-red-600 p-2 w-fit font-extrabold rounded-md mb-1 ">
             NEW
           </span>
-          <div className="bg-zinc-200 dark:bg-transparent p-4 rounded-md">
-            <h1 className="text-wrap font-extrabold text-lg sm:text-3xl">
-              {first.title}
-            </h1>
-            <figure>
-              <Image
-                src={first.multimedia[1].url}
-                alt={first.multimedia[1].caption}
-                width={first.multimedia[1].width}
-                height={first.multimedia[1].height}
-                priority={true}
-                className="sm:size-11/12"
-              />
-              {first.multimedia[1].copyright ? (
-                <figcaption>
-                  copyright - {first.multimedia[1].copyright}
-                </figcaption>
-              ) : (
-                ""
-              )}
-            </figure>
-            <p className="mt-2 mb-2 sm:text-xl">{first.abstract}</p>
-            <div className="flex flex-col justify-between pt-2 items-start sm:flex-row ">
-              <a href={first.url} target="_blank">
-                <Button variant="outline" className=" sm:text-2xl">
-                  Read more
-                </Button>
-              </a>
-              <p className="sm:text-2xl">{first.byline}</p>
+          <div className="bg-zinc-200 dark:bg-transparent p-4 rounded-md ">
+            <div className="lg:flex lg:flex-row-reverse lg:justify-between">
+              <h1 className="text-wrap font-extrabold text-lg sm:text-3xl lg:size-1/3 ">
+                {first.title}
+              </h1>
+              <figure className="lg:size-2/3">
+                <Image
+                  src={first.multimedia[1].url}
+                  alt={first.multimedia[1].caption}
+                  width={first.multimedia[1].width}
+                  height={first.multimedia[1].height}
+                  priority={true}
+                  className="sm:size-11/12 "
+                />
+                {first.multimedia[1].copyright ? (
+                  <figcaption>
+                    copyright - {first.multimedia[1].copyright}
+                  </figcaption>
+                ) : (
+                  ""
+                )}
+              </figure>
+            </div>
+            <div className="">
+              <p className="mt-2 mb-2 sm:text-xl ">{first.abstract}</p>
+              <div className="flex flex-col justify-between pt-2 items-start sm:flex-row ">
+                <a href={first.url} target="_blank">
+                  <Button variant="outline" className=" sm:text-2xl">
+                    Read more
+                  </Button>
+                </a>
+                <p className="sm:text-2xl">{first.byline}</p>
+              </div>
             </div>
           </div>
         </article>
@@ -126,7 +130,7 @@ export default function Home() {
                 {world.map((obj) => (
                   <CarouselItem
                     key={obj.uri}
-                    className="basis-10/12 sm:basis-3/4 md:basis-4/5"
+                    className="basis-10/12 sm:basis-3/4 md:basis-4/5 lg:basis-11/12"
                   >
                     <CardCarousel data={obj} />
                   </CarouselItem>

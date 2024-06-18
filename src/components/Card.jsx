@@ -18,7 +18,7 @@ export const Card = ({ data }) => {
               width={data.multimedia[1].width}
               height={data.multimedia[1].height}
               priority={true}
-              className="sm:size-full"
+              className="sm:size-full lg:size-10/12"
             />
             {data.multimedia[1].copyright ? (
               <figcaption>
