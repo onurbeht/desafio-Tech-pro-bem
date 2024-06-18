@@ -26,8 +26,8 @@ export default function Home() {
     Autoplay({ delay: 5000, stopOnInteraction: false, stopOnMouseEnter: true })
   ); //Used in Carousel
 
-  const apiKey = "eTFhbAG7ezgqfPXi63nAbGq1fRSsgzJf";
-  const apiUrl = "https://api.nytimes.com/svc/topstories/v2/home.json?api-key=";
+  const url = process.env.NEXT_PUBLIC_API_URL;
+  const key = process.env.NEXT_PUBLIC_API_KEY;
 
   async function getData(url) {
     setLoading(true);
@@ -39,7 +39,7 @@ export default function Home() {
   }
 
   useEffect(() => {
-    getData(apiUrl + apiKey);
+    getData(url + key);
   }, []);
 
   useEffect(() => {
